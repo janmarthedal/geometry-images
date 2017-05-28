@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>thales-theorem.cdy</title>
+    <style type="text/css">
+        * {
+            margin: 0px;
+            padding: 0px;
+        }
+
+        #CSConsole {
+            background-color: #FAFAFA;
+            border-top: 1px solid #333333;
+            bottom: 0px;
+            height: 200px;
+            overflow-y: scroll;
+            position: fixed;
+            width: 100%;
+        }
+    </style>
+    <script type="text/javascript" src="http://cinderella.de/CindyJS/latest/Cindy.js"></script>
+
+    <script type="text/javascript">
+createCindy({ 
+	scripts: "cs*", 
+	defaultAppearance: { fontFamily: "sans-serif", lineSize: 1, pointSize: 5.0, textsize: 12.0 }, 
+	angleUnit: "°", 
+	geometry: [ 
+		{ name: "A", type: "Free", pos: [ 4.0, -1.6666666666666667, 0.3333333333333333 ], color: [ 0.0, 0.0, 0.0 ], pinned: true, labeled: true, textsize: 16.0, size: 0.0, printname: "O" }, 
+		{ name: "C0", type: "CircleByRadius", pos: { xx: 0.014473418240995755, yy: 0.014473418240995755, zz: 0.9999999999999999, xy: 0.0, xz: -0.3473620377838981, yz: -0.14473418240995758 }, color: [ 0.0, 0.0, 0.0 ], radius: 9.995390000691224, args: [ "A" ], pinned: true, size: 3, printname: "$C_{0}$" }, 
+		{ name: "B", type: "PointOnCircle", pos: [ { r: 1.6036879994470195, i: 6.100795583564801E-17 }, -4.0, { r: 0.7999999999999998, i: 3.0433827954906246E-17 } ], color: [ 0.0, 0.0, 0.0 ], args: [ "C0" ], pinned: true, labeled: true, textsize: 16.0, size: 0.0, printname: "A" }, 
+		{ name: "C", type: "PointOnCircle", pos: [ 4.0, { r: -0.9092814448560121, i: -6.208726310891243E-17 }, { r: 0.1818562889712024, i: -5.541871253985928E-32 } ], color: [ 0.0, 0.0, 0.0 ], args: [ "C0" ], pinned: true, labeled: true, textsize: 16.0, size: 0.0, printname: "B" }, 
+		{ name: "a", type: "Segment", color: [ 0.0, 0.0, 0.0 ], args: [ "B", "C" ], size: 3 }, 
+		{ name: "D", type: "PointOnCircle", pos: [ 4.0, { r: 1.6842010230457543, i: 7.553425662627221E-15 }, { r: 0.8084711846391927, i: -2.656941894571603E-15 } ], color: [ 1.0, 0.0, 0.0 ], args: [ "C0" ], labeled: true, textsize: 16.0, printname: "P" }, 
+		{ name: "b", type: "Segment", color: [ 0.0, 0.0, 0.0 ], args: [ "B", "D" ], size: 3 }, 
+		{ name: "c", type: "Segment", color: [ 0.0, 0.0, 0.0 ], args: [ "D", "C" ], size: 3 }, 
+		{ name: "d", type: "Segment", color: [ 0.0, 0.0, 0.0 ], args: [ "D", "A" ], size: 3 } ], 
+	ports: [ 
+		{ id: "CSCanvas", width: 1920, height: 1023, transform: [ { visibleRect: [ -6.7530009775171065, 5.8055522971652, 34.0868817204301, -15.9544477028348 ] } ], background: "rgb(168,176,192)" } ], 
+	cinderella: { build: 1835, version: [ 2, 9, 1835 ] } });
+    </script>
+</head>
+<body>
+    <canvas id="CSCanvas"></canvas>
+</body>
+</html>
